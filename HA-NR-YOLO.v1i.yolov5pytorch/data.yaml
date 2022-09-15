@@ -1,0 +1,6 @@
+path: D:\aaron\projects\yolov5\HA-NR-YOLO.v1i.yolov5pytorch
+train: D:\aaron\projects\yolov5\HA-NR-YOLO.v1i.yolov5pytorch\train\images
+val: D:\aaron\projects\yolov5\HA-NR-YOLO.v1i.yolov5pytorch\valid\images
+
+nc: 1
+names: ['Thumbs up']

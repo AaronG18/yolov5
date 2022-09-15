@@ -22,7 +22,6 @@ Usage - formats:
                                  yolov5s.pb                 # TensorFlow GraphDef
                                  yolov5s.tflite             # TensorFlow Lite
                                  yolov5s_edgetpu.tflite     # TensorFlow Edge TPU
-                                 yolov5s_paddle_model       # PaddlePaddle
 """
 
 import argparse
@@ -198,6 +197,8 @@ def run(
                     vid_writer[i].write(im0)
 
         # Print time (inference-only)
+        print(f"line 200 s value is :{s}")
+        check_target(s, "Thumbs up")
         LOGGER.info(f"{s}{'' if len(det) else '(no detections), '}{dt[1].dt * 1E3:.1f}ms")
 
     # Print results
@@ -248,6 +249,14 @@ def parse_opt():
 def main(opt):
     check_requirements(exclude=('tensorboard', 'thop'))
     run(**vars(opt))
+
+### check if found target ###
+def check_target(input_string, target):
+    if target in input_string:
+        #call mqtt
+        print("matched! target: Thumbs up")
+        pass
+
 
 
 if __name__ == "__main__":
